@@ -1,0 +1,543 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100svh;
+    overflow: hidden;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    background:
+        #20a9ef
+        url("welcome-bg.png")
+        center center / cover
+        no-repeat fixed;
+}
+
+.welcome-page {
+    width: 100%;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.welcome-card {
+    width: min(100%, 600px);
+    margin-bottom: -130px;
+
+    margin-left: clamp(110px, 23vw, 330px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(5%);
+}
+
+.welcome-content {
+    width: min(100%, 650px);
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 3px solid #e8b143;
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.151);
+
+    box-shadow:
+        0 12px 28px rgba(20, 73, 125, 0.2),
+        inset 0 0 0 5px rgba(255,255,255,0.55);
+}
+
+
+.subtitle {
+    margin: 15px 0 25px;
+
+    color: #123f91;
+
+    font-size: clamp(17px, 2.2vw, 25px);
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+form {
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #16458f;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+input {
+    width: 100%;
+    min-height: 58px;
+
+    padding: 13px 18px;
+
+    border: 3px solid #c8d8e8;
+    border-radius: 17px;
+
+    outline: none;
+
+    background: white;
+    color: #173f7c;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: #a5acb7;
+    font-style: italic;
+}
+
+input:focus {
+    border-color: #1688e5;
+
+    box-shadow:
+        0 0 0 4px rgba(22,136,229,0.14);
+}
+
+.error-message {
+    min-height: 20px;
+
+    margin: 7px 4px;
+
+    color: #c62828;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.start-button {
+    width: min(100%, 390px);
+    min-height: 72px;
+
+    margin: 10px auto 0;
+    padding: 12px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    border: 4px solid #087d1bf1;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        #63f22c,
+        #13b91e 58%,
+        #07941a
+    );
+
+    color: white;
+
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 1000;
+
+    text-shadow: 0 3px 2px rgba(0,0,0,0.35);
+
+    box-shadow:
+        0 7px 0 #08751b,
+        0 12px 18px rgba(0,0,0,0.18),
+        inset 0 4px 5px rgba(255,255,255,0.6);
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+.start-button:hover {
+    filter: brightness(1.07);
+    transform: translateY(-2px);
+}
+
+.start-button:active {
+    transform: translateY(4px);
+}
+
+.bottom-note {
+    margin: 20px 0 0;
+
+    color: #b67812;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+
+    body {
+        background-position: 34% center;
+    }
+
+    .welcome-page {
+        padding: 12px;
+    }
+
+    .welcome-card {
+        min-width: 100%;
+        margin-left: 0;
+
+        transform: none;
+
+        padding-top: 18vh;
+    }
+
+    .welcome-content {
+        padding: 18px 16px;
+
+        border-radius: 22px;
+
+        background: rgba(255,250,231,0.96);
+    }
+
+    .subtitle {
+        margin: 10px 0 17px;
+    }
+
+    input {
+        min-height: 52px;
+        font-size: 17px;
+    }
+
+    .start-button {
+        min-height: 62px;
+    }
+
+    .bottom-note {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .welcome-card {
+        padding-top: 13vh;
+    }
+
+    .welcome-content {
+        padding: 15px 12px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .start-button {
+        min-height: 56px;
+        font-size: 23px;
+    }
+}
+
+@media (max-height: 650px) and (min-width: 761px) {
+
+    .welcome-card {
+        transform: scale(0.88) translateY(2%);
+    }
+}
+
+/* =================================
+   RESPONSIVE BACKGROUND FIX
+================================= */
+
+/* Desktop and large screens */
+body {
+    background-image: url("welcome-bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Tablets and portrait screens */
+@media (max-width: 1024px) and (orientation: portrait) {
+
+    body {
+        background-size: 100% 100%;
+        background-position: center center;
+        background-attachment: scroll;
+    }
+
+    .welcome-page {
+        padding: 12px;
+    }
+
+    .welcome-card {
+        width: 100%;
+        max-width: 650px;
+        margin-left: 0;
+        transform: none;
+        padding-top: 10vh;
+    }
+
+    .welcome-content {
+        background: rgba(255, 250, 231, 0.91);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+
+    body {
+        background-size: 100% 100%;
+        background-position: center center;
+        background-attachment: scroll;
+    }
+
+    .welcome-page {
+        min-height: 100svh;
+        height: 100svh;
+        padding: 10px;
+    }
+
+    .welcome-card {
+        width: 100%;
+        margin: 0;
+        padding-top: 12vh;
+        transform: none;
+    }
+
+    .welcome-content {
+        width: 100%;
+        padding: 17px 13px;
+        border-radius: 22px;
+
+        background: rgba(255, 250, 231, 0.92);
+
+        box-shadow:
+            0 8px 22px rgba(20, 73, 125, 0.25),
+            inset 0 0 0 4px rgba(255,255,255,0.55);
+    }
+
+    h1 {
+        font-size: clamp(27px, 8vw, 34px);
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin: 10px 0 17px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    input {
+        min-height: 52px;
+        font-size: 16px;
+    }
+
+    .start-button {
+        width: 100%;
+        min-height: 60px;
+        font-size: 24px;
+    }
+
+    .bottom-note {
+        font-size: 13px;
+        margin-top: 14px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+
+    .welcome-card {
+        padding-top: 9vh;
+    }
+
+    .welcome-content {
+        padding: 14px 11px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .start-button {
+        min-height: 54px;
+        font-size: 21px;
+    }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .welcome-page {
+        padding: 8px;
+    }
+
+    .welcome-card {
+        margin: 0;
+        padding: 0;
+        transform: scale(0.82);
+    }
+
+    .welcome-content {
+        padding: 12px 20px;
+    }
+
+    .bottom-note {
+        margin-top: 8px;
+    }
+}
+
+/* =====================================
+   MOBILE WELCOME BOX - FINAL FIX
+===================================== */
+
+@media (max-width: 600px) {
+
+    .welcome-page {
+        padding: 8px;
+    }
+
+    .welcome-card {
+        width: 92%;
+        max-width: 340px;
+        margin: 0 auto;
+
+        padding-top: 0;
+
+        transform: translateY(22px);
+    }
+
+    .welcome-content {
+        width: 100%;
+
+        padding: 12px 12px 10px;
+
+        border-radius: 19px;
+        border-width: 2px;
+
+        background: rgba(255, 250, 231, 0.94);
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        line-height: 1.4;
+
+        margin: 7px 0 14px;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    input {
+        min-height: 47px;
+        padding: 10px 13px;
+
+        font-size: 15px;
+        border-radius: 15px;
+    }
+
+    .error-message {
+        min-height: 15px;
+        margin: 4px;
+        font-size: 12px;
+    }
+
+    .start-button {
+        width: 100%;
+        min-height: 55px;
+
+        margin-top: 5px;
+        padding: 8px;
+
+        font-size: 23px;
+    }
+
+    .bottom-note {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+/* Extra small phones */
+
+@media (max-width: 380px) {
+
+    .welcome-card {
+        width: 92%;
+        max-width: 330px;
+
+        transform: translateY(25px);
+    }
+
+    .welcome-content {
+        padding: 10px 10px 9px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    .start-button {
+        min-height: 52px;
+        font-size: 21px;
+    }
+}
+
+/* Short mobile screens */
+
+@media (max-width: 600px) and (max-height: 600px) {
+
+    .welcome-card {
+        transform: translateY(8px) scale(0.90);
+    }
+}
+

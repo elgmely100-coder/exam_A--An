@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#28a8ee">
+
+  <title>A / An Kids Quiz</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- =================================
+       MAIN QUIZ
+  ================================== -->
+
+  <main class="game-shell" id="gameShell">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+      <div class="wood-sign">
+        <div class="wood-title">A / An Quiz</div>
+        <div class="wood-subtitle">
+          ⭐ Let’s Learn English! ⭐
+        </div>
+      </div>
+
+      <div class="hud">
+
+        <!-- TIMER -->
+
+        <div class="timer-card">
+          <span class="clock">⏱️</span>
+
+          <div>
+            <strong id="timer">20:00</strong>
+            <small>TIME LEFT</small>
+          </div>
+        </div>
+
+        <!-- SCORE -->
+
+        <div class="score-card">
+          <span>⭐</span>
+
+          <strong>
+            <b id="score">0</b> / 25
+          </strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- PROGRESS -->
+
+    <section class="progress-area" aria-label="Quiz progress">
+
+      <div class="progress-count" id="progressCount">
+        1 / 25
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+    </section>
+
+
+    <!-- QUESTIONS AREA -->
+
+    <section class="play-area" id="playArea">
+
+      <!-- SIDE NOTE -->
+
+      <div class="side-note">
+
+        <div class="medal">🏅</div>
+
+        <strong>Good Luck!</strong>
+
+        <span>You Can Do It!</span>
+
+        <span class="smile">😊</span>
+
+      </div>
+
+
+      <!-- QUESTION PANEL -->
+
+      <section class="question-panel">
+
+        <div class="question-tab" id="questionTab">
+          Question 1
+        </div>
+
+        <div class="question-content">
+
+          <div class="question-type" id="questionType">
+            Choose the correct answer
+          </div>
+
+          <div
+            class="question-visual"
+            id="questionVisual"
+            aria-hidden="true">
+          </div>
+
+          <h1 class="question-text" id="questionText">
+            I have ___ apple.
+          </h1>
+
+          <!-- ANSWERS -->
+
+          <div class="answers" id="answers"></div>
+
+          <!-- FEEDBACK -->
+
+          <div
+            class="feedback"
+            id="feedback"
+            aria-live="polite">
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- QUIZ BUTTONS -->
+
+    <footer class="controls">
+
+      <button
+        class="submit-btn"
+        id="submitBtn"
+        type="button">
+
+        ✓ <span>Submit Answer</span>
+
+      </button>
+
+      <button
+        class="next-btn"
+        id="nextBtn"
+        type="button"
+        hidden>
+
+        Next Question ➜
+
+      </button>
+
+    </footer>
+
+
+    <!-- =================================
+         RESULT SCREEN
+    ================================== -->
+
+    <section
+      class="result-screen"
+      id="resultScreen"
+      hidden>
+
+      <div class="result-card">
+
+        <div class="result-stars">
+          🏆 ⭐ 🏆
+        </div>
+
+        <h2 id="resultTitle">
+          Amazing Work!
+        </h2>
+
+        <p id="resultMessage">
+          You finished the quiz!
+        </p>
+
+        <div class="final-score">
+
+          <span id="finalScore">0</span>
+
+          <small>/ 25</small>
+
+        </div>
+
+        <p
+          class="result-percent"
+          id="resultPercent">
+          0%
+        </p>
+
+        <!-- RESULT BUTTONS -->
+
+        <div class="result-actions">
+
+          <button
+            class="submit-btn"
+            id="certificateBtn"
+            type="button">
+
+            🎓 Get Certificate
+
+          </button>
+
+          <button
+            class="secondary-btn"
+            id="restartBtn"
+            type="button">
+
+            ↻ Try Again
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =================================
+       PROFESSIONAL CERTIFICATE
+  ================================== -->
+
+  <section
+    class="certificate"
+    id="certificate"
+    aria-label="Student certificate">
+
+    <!-- CERTIFICATE IMAGE CONTAINER -->
+
+    <div
+      class="certificate-wrapper"
+      id="certificateCapture">
+
+      <!-- BACKGROUND IMAGE -->
+
+      <img
+        src="./certificate-bg.png"
+        class="certificate-background"
+        alt="English Quiz Certificate">
+
+      <!-- STUDENT NAME -->
+
+      <div
+        class="certificate-student-name"
+        id="certStudent">
+
+        Student Name
+
+      </div>
+
+      <!-- STUDENT SCORE -->
+
+      <div
+        class="certificate-score-number"
+        id="certScoreNumber">
+
+        0
+
+      </div>
+
+      <!-- STUDENT PERCENTAGE -->
+
+      <div
+        class="certificate-percent-number"
+        id="certPercentNumber">
+
+        0
+
+      </div>
+
+      <!-- EXAM DATE -->
+
+      <div
+        class="certificate-date-value"
+        id="certDate">
+
+        10/11/2026
+
+      </div>
+
+    </div>
+
+
+    <!-- CERTIFICATE BUTTONS -->
+
+    <div class="cert-print-actions">
+
+      <!-- DOWNLOAD PNG -->
+
+      <button
+        class="download-cert-btn"
+        id="downloadCertificateBtn"
+        type="button">
+
+        ⬇ Download Certificate PNG
+
+      </button>
+
+      <!-- BACK TO RESULT -->
+
+      <button
+        class="secondary-btn"
+        id="backToResultBtn"
+        type="button">
+
+        ↩ Back to Results
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       LOCAL HTML2CANVAS LIBRARY
+  ================================== -->
+
+  <script src="./html2canvas.js"></script>
+
+  <!-- MAIN JAVASCRIPT - LOAD ONLY ONCE -->
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
